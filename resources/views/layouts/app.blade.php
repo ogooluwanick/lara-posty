@@ -12,7 +12,7 @@
         <nav class="p-6 bg-white flex justify-between">
                 <ul class="flex items-center">
                         <li>
-                                <a href="" class="p-3">HOME</a>
+                                <a href="/" class="p-3">HOME</a>
                         </li>
                         <li>
                                 <a href="" class="p-3">DASHBOARD</a>
@@ -30,7 +30,7 @@
                                 <a href="" class="p-3">Login</a>
                         </li>
                         <li>
-                                <a href="" class="p-3">Register</a>
+                                <a href={{ route('register') }} class="p-3">Register</a>
                         </li>
                         <li>
                                 <a href="" class="p-3">Logout</a>
