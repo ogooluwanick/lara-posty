@@ -3,6 +3,9 @@
 use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 
+//Show Dashboard page 
+Route::get('/dashboard',[DashboardController::class,"index" ])->name("dashboard");
+
 //Show Register page 
 Route::get('/register',[RegisterController::class,"index" ])->name("register");
 
