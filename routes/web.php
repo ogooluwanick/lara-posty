@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
@@ -27,7 +28,7 @@ Route::get('/register',[RegisterController::class,"index" ])->name("register");
 //Register Logic  store()
 Route::post('/register',[RegisterController::class,"store" ]);
 
-//Show index page 
-Route::get('/posts', function () {
-    return view('posts.index');
-})->name("posts");
+//Show posts page 
+Route::get('/posts',[PostController::class,"index" ])->name("posts");
+//Store post page 
+Route::post('/posts',[PostController::class,"store" ]);
