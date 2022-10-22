@@ -25,7 +25,7 @@
                 <ul class="flex items-center">
                         @auth
                                 <li>
-                                        <a href="" class="p-3">Ogooluwa Emmanuel</a>
+                                        <a href="" class="p-3">{{explode(" ",auth()->user()->name)[0]}}</a>
                                 </li>
                                 <li>
                                         <form action={{route("logout")}} method="POST" class="inline ">
