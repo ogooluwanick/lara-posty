@@ -12,13 +12,13 @@
         <nav class="p-6 bg-white flex justify-between">
                 <ul class="flex items-center">
                         <li>
-                                <a href="/" class="p-3">HOME</a>
+                                <a href={{route("home")}}  class="p-3">HOME</a>
                         </li>
                         <li>
-                                <a href="" class="p-3">DASHBOARD</a>
+                                <a href={{route("dashboard")}} class="p-3">DASHBOARD</a>
                         </li>
                         <li>
-                                <a href="" class="p-3">POST</a>
+                                <a href={{route("posts")}}  class="p-3">POST</a>
                         </li>
                 </ul>
 
@@ -28,7 +28,12 @@
                                         <a href="" class="p-3">Ogooluwa Emmanuel</a>
                                 </li>
                                 <li>
-                                        <a href="" class="p-3">Logout</a>
+                                        <form action={{route("logout")}} method="POST" class="inline ">
+                                                @csrf
+                                                <button type="submit" class="p-3">
+                                                        Logout
+                                                </button>
+                                        </form>
                                 </li>
                         @endauth
                         @guest
