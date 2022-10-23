@@ -31,6 +31,10 @@
                                                 <p class="mb-2">{{$item->body}}</p>
                                             </div>
                                         @endforeach
+
+                                        <div class="mt-6 p-4">
+                                                {{$posts->links()}}    <!--Pagination links-->
+                                        </div>
                                 @else
                                         <p>There are no posts</p>
                                 @endif
