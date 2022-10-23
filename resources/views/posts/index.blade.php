@@ -18,6 +18,23 @@
                                         <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded font-medium mt-2">Post</button>
                                 </div>
                         </form>
+
+                        <div class="my-4">
+                                @if ($posts->count())
+                                        @foreach ($posts as $item)
+                                            <div class="mb-4">
+                                               {{-- @php
+                                                   dd(explode($item->user->name))
+                                               @endphp  --}}
+                                                <a href="" class="font-bold">{{explode(" ",$item->user->name)[0]}}</a>
+                                                <span class="text-gray-600">{{$item->created_at->diffForHumans()}}</span>
+                                                <p class="mb-2">{{$item->body}}</p>
+                                            </div>
+                                        @endforeach
+                                @else
+                                        <p>There are no posts</p>
+                                @endif
+                        </div>
                 </div>
         </div>
 @endsection
