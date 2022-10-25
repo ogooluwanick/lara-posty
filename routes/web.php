@@ -32,3 +32,8 @@ Route::post('/register',[RegisterController::class,"store" ]);
 Route::get('/posts',[PostController::class,"index" ])->name("posts");
 //Store post page 
 Route::post('/posts',[PostController::class,"store" ]);
+//Like a post  
+Route::post('/like/{post}',[PostController::class,"like" ]);
+//Unlike a post  
+Route::delete('/unlike/{post}',[PostController::class,"unlike" ]);
+
