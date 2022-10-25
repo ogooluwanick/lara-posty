@@ -13,7 +13,7 @@ class PostController extends Controller
         }
 
     public function index(){
-        $posts=Post::latest()->simplePaginate(5);
+        $posts=Post::latest()->with(["user","likes"])->simplePaginate(5);
         return view('posts.index',[
                 "posts"=>$posts
         ]);
