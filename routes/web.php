@@ -38,4 +38,4 @@ Route::post('/like/{post}',[PostController::class,"like" ]);
 Route::delete('/unlike/{post}',[PostController::class,"unlike" ]);
 //Delete a post  
 Route::delete('/delete/{post}',[PostController::class,"delete" ]);
-
+  
