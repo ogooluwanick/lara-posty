@@ -31,6 +31,13 @@ class PostController extends Controller
         $request->user()->likes()->where("post_id",$post->id)->delete();
         return back();
     }
+    public function delete(Post $post,Request $request){
+        // if($post->likedBy($request->user())){
+        //         return response(null,409);
+        // }
+        $post->delete();
+        return back();
+    }
 
     public function store(Request $request){
         // dd("done");
