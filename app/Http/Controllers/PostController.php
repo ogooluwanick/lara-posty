@@ -33,7 +33,9 @@ class PostController extends Controller
         return back();
     }
     public function delete(Post $post,Request $request){
-
+        if(!$post->ownedBy(auth()->user())){
+                return response("Unauth action",409);
+        }
         $post->delete();
         return back();
     }
