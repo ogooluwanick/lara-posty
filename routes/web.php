@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\UserPostController;
 
 //Show Home page 
 Route::get('/',function(){
@@ -38,4 +39,8 @@ Route::post('/like/{post}',[PostController::class,"like" ]);
 Route::delete('/unlike/{post}',[PostController::class,"unlike" ]);
 //Delete a post  
 Route::delete('/delete/{post}',[PostController::class,"delete" ]);
+
+
+//Delete a post  
+Route::get('/users/{user:name}/post',[UserPostController ::class,"index" ])->name("user.post");
   
