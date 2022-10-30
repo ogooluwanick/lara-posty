@@ -42,5 +42,5 @@ Route::delete('/delete/{post}',[PostController::class,"delete" ]);
 
 
 //Delete a post  
-Route::get('/users/{user:name}/post',[UserPostController ::class,"index" ])->name("user.post");
+Route::get('/users/{user}/post',[UserPostController ::class,"index" ])->name("user.post");
   

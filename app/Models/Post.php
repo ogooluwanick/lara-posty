@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Like;
+// use App\Models\Post;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -26,5 +27,8 @@ class Post extends Model
     }
     public function likes(){
         return $this->hasMany(Like::class);
+    }
+    public function receivedLikes(){
+        return $this->hasManyThrough(Like::class, Post::class);
     }
 }
