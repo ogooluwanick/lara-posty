@@ -31,6 +31,8 @@ Route::post('/register',[RegisterController::class,"store" ]);
 
 //Show posts page 
 Route::get('/posts',[PostController::class,"index" ])->name("posts");
+//Show post page 
+Route::get('/posts/{post}',[PostController::class,"show" ])->name("post.show");
 //Store post page 
 Route::post('/posts',[PostController::class,"store" ]);
 //Like a post  
