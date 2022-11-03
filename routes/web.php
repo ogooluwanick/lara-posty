@@ -34,15 +34,15 @@ Route::get('/posts',[PostController::class,"index" ])->name("posts");
 //Show post page 
 Route::get('/posts/{post}',[PostController::class,"show" ])->name("post.show");
 //Store post page 
-Route::post('/posts',[PostController::class,"store" ]);
+Route::post('/posts',[PostController::class,"store" ])->middleware("auth");;
 //Like a post  
-Route::post('/like/{post}',[PostController::class,"like" ]);
+Route::post('/like/{post}',[PostController::class,"like" ])->middleware("auth");;
 //Unlike a post  
-Route::delete('/unlike/{post}',[PostController::class,"unlike" ]);
+Route::delete('/unlike/{post}',[PostController::class,"unlike" ])->middleware("auth");;
 //Delete a post  
-Route::delete('/delete/{post}',[PostController::class,"delete" ]);
+Route::delete('/delete/{post}',[PostController::class,"delete" ])->middleware("auth");;
 
 
 //Delete a post  
-Route::get('/users/{user}/post',[UserPostController ::class,"index" ])->name("user.post");
+Route::get('/users/{user}/post',[UserPostController ::class,"index" ])->name("user.post")->middleware("auth");;
   
