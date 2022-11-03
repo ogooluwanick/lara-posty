@@ -28,8 +28,10 @@ class PostController extends Controller
                 "user_id"=>$request->user()->id,
         ]);
       
-        $user=auth()->user();
-        Mail::to($user)->send(new PostLiked($user,$post));
+        if(!$post->likes()->onlyTrashed()->where("user_id",$request->user()->id)->count()){
+                $user=auth()->user();
+                Mail::to($user)->send(new PostLiked($user,$post));
+        }
 
         return back(); 
     }
